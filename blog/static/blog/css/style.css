@@ -1,0 +1,358 @@
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+@media(max-width: 992px) {
+    aside{
+        display: none;
+    }
+}
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+body a {
+    color: #333;
+}
+body a:hover {
+    text-decoration: none;
+}
+pre{
+    font-size: 16px;
+    line-height: 1.5;
+}
+.my-navbar{
+    padding: 2em 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.header-logo a {
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0;
+}
+.top-nav {
+    padding-right: 0;
+}
+.top-nav ul {
+    margin: 0;
+}
+.top-nav ul li{
+    list-style-type:none;
+}
+.top-nav ul li a {
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#header-search-box {
+    padding: 11px 35px;
+}
+#searchform input[type=search] {
+    padding-left: 5px;
+    width: 176px;
+    outline-style: none;
+    border: 1px #9d9d9d solid;
+    background-color: #222;
+    color: #9d9d9d;
+}
+#searchform input[type=search]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #222 inset;
+    -webkit-text-fill-color: #9d9d9d; !important;
+    caret-color: #9d9d9d;
+}
+#searchform button {
+    margin-left: -10px;
+    border: 1px #9d9d9d solid;
+    border-left-width: 0;
+    background-color: #222;
+    color: #9d9d9d;
+}
+
+.col-md-8{
+    padding-left: 0
+}
+
+article.article-entry {
+    padding-bottom: 20px;
+}
+.entry-meta .post-category button{
+    background-color: grey;
+    border: 0
+}
+.entry-meta span {
+    color: grey;
+    margin-left: 5px;
+}
+.entry-meta span:first-child {
+    margin-left: 0;
+}
+.entry-meta span a {
+    color: grey;
+}
+.entry-content{
+    margin-top: 5px;
+}
+
+.read-more a {
+    color: #111111;
+    text-decoration: none;
+    transition: .5s
+}
+.read-more a:hover{
+    color:#e80000;
+}
+.read-more a span {
+    margin-left: 0.25rem;
+}
+aside .widget {
+    margin-bottom: 30px;
+}
+aside .widget ul{
+    list-style-type: none;
+}
+aside .widget ul li{
+    margin-bottom: 3px;
+}
+aside .widget-title {
+    padding-left: 40px;
+}
+aside .widget-tag-cloud ul {
+    margin: 0;
+    margin-right: -10px;
+}
+
+aside .widget-tag-cloud ul li {
+    list-style-type: none;
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 3px 8px;
+    border: 1px solid #ddd;
+}
+aside div.rss {
+    padding-left: 40px;
+    font-size: 21px;
+}
+
+article .article-content h2 {
+    font-size: 27px;
+}
+
+div.content-bottom{
+    margin-top: 2em;
+}
+div.content-bottom button:hover{
+    background-color: lightgrey;
+}
+div.content-bottom .fa-thumbs-o-up{
+    float: left;
+    font-size: medium;
+    color: #e45d63;
+    margin-right: 5px;
+}
+div.content-bottom .likes{
+    font-size: small;
+    font-weight: bold;
+    color: #e45d63;
+}
+
+.contact-form input, .comment-form input {
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 15px 15px;
+    font-size: 16px;
+    line-height: 100%;
+    transition: 0.4s border-color linear;
+}
+
+.contact-form textarea, .comment-form textarea {
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 15px 15px;
+    font-size: 16px;
+    line-height: 20px !important;
+    min-height: 183px;
+    transition: 0.4s border-color linear;
+}
+
+.contact-form input:focus, .comment-form input:focus,
+.contact-form textarea:focus, .comment-form textarea:focus {
+    border-color: #666;
+}
+
+.btn-send {
+    background: none;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn-5 {
+    color: #666;
+    height: 70px;
+    min-width: 260px;
+    line-height: 15px;
+    font-size: 16px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.btn-5 span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+    -moz-transition: all 0.3s;
+    -moz-backface-visibility: hidden;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+}
+
+.btn-5:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 2.5;
+    font-size: 180%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-5:active:before {
+    color: #703b87;
+}
+
+.btn-5b:hover span {
+    -webkit-transform: translateX(200%);
+    -moz-transform: translateX(200%);
+    -ms-transform: translateX(200%);
+    transform: translateX(200%);
+}
+
+.btn-5b:before {
+    left: -100%;
+    top: 0;
+}
+
+.btn-5b:hover:before {
+    left: 0;
+}
+
+.comment-form {
+    margin-top: 15px;
+}
+
+.comment-form .comment-btn {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.comment-list-panel {
+    margin-top: 30px;
+}
+
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item:not(:last-child) {
+    border-bottom: 1px #ccc solid;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.comment-item .nickname,
+.comment-item .submit-date {
+    color: #777;
+    font-size: 14px;
+}
+
+.comment-item .nickname:after {
+    content: ' ·';
+}
+
+.comment-item .text {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.pagination {
+    text-align: center;
+}
+.pagination ul {
+    padding: 0;
+    list-style: none;
+}
+.pagination ul li {
+    display: inline-block;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.pagination ul li a {
+    color: grey;
+}
+.pagination ul li.current a {
+    color: #333;
+}
+
+.footer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.footer .container{
+    padding: 0;
+}
+.footer a{
+    text-decoration: none;
+    color: #666;
+}
+.copyright {
+    text-align: center;
+    padding-top: 1em;
+    margin: 0;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+.about-site h2{
+    font-weight: bold;
+}
+.about-site div{
+    font-size: large;
+    margin-bottom: 2em;
+}
+div.about-me-left .nickname{
+    font-size: x-large;
+    margin-top: 1em;
+}
+div.about-me-left .text-muted{
+    font-size: large;
+}
+.about-me-content h2{
+    font-weight: bold;
+}
+.about-me-content div{
+    font-size: large;
+    margin-bottom: 2em;
+}

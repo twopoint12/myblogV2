@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load blog_extras %}
+{% load comments_extras %}
+
+{% block middle-page %}
+  <main class="col-md-8">
+    <article>
+      <h2 class="article-title">{{ article.title }}</h2>
+      <p class="entry-meta">
+        <span class="post-date">
+          <i class="fa fa-clock-o"></i>
+          <a><time class="entry-date" datetime="{{ article.created_time }}">{{ article.created_time | date }}</time></a>
+        </span>
+        <span class="comments-link">
+          <a href="{{ article.get_absolute_url }}#comment-area">
+            <i class="fa fa-comment-o"></i>
+            {{ article.comment_set.count }}
+          </a>
+        </span>
+        <span class="views-count">
+          <i class="fa fa-eye"></i>
+          <a>{{ article.views }}</a>
+        </span>
+      </p>
+      <div class="article-content">
+        {{ article.body_html | safe }}
+      </div>
+    </article>
+
+    <div class="content-bottom">
+      {% csrf_token %}
+      <!-- like script -->
+      <script type="text/javascript">
+        $.ajaxSetup({
+          data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
+        });
+        $(function () {
+          var likeButton = $('div.content-bottom>button');
+          likeButton.click(function () {
+            var articleId = {{ article.id }};
+            var likes = parseInt(likeButton.find('span.likes').text());
+            $.post({% url 'blog:update_likes' %}, {
+                'articleId': articleId
+              },
+              function (data, status) {
+                if (status === 'success') {
+                  if (data['status'] === 'insert success') {
+                    likeButton.find('span.likes').text(likes + 1);
+                  } else if (data['status'] === 'insert fail') {
+                    window.alert('同一IP只能点赞一次，你已经点过赞了。')
+                  }
+                }
+              });
+            });
+        });
+      </script>
+      <!-- like script END -->
+      <button class="btn btn-sm">
+        <span class="fa fa-thumbs-o-up"></span>
+        <span class="likes">{{ article.get_likes }}</span>
+      </button>
+    </div>
+
+    <section class="comment-area" id="comment-area">
+      <hr>
+      <h3>发表评论</h3>
+      {% show_comment_form article %}
+      <div class="comment-list-panel">
+        {% show_comments article %}
+      </div>
+    </section>
+  </main>
+  <aside class="col-md-4">
+    {% block toc %}
+      {% if article.toc %}
+        <div class="widget widget-content">
+          <h3 class="widget-title">文章目录</h3>
+          <div class="toc">
+            <ul>
+              {{ article.toc | safe }}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    {% endblock toc %}
+
+    {% show_recent_posts %}
+    {% show_archives %}
+    {% show_categories %}
+    {% show_tags %}
+
+    <div class="rss">
+      <a href="{% url 'blog:rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+    </div>
+  </aside>
+{% endblock middle-page %}
