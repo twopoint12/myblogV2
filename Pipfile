@@ -11,6 +11,7 @@ markdown = "*"
 faker = "*"
 django-pure-pagination = "*"
 elasticsearch = ">=2,<3"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
